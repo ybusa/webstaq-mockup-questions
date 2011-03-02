@@ -1,4 +1,6 @@
 WebstaqMockupQuestions::Application.routes.draw do
+  resources :questions
+
   get "pages/home"
 
   # The priority is based upon order of creation:
