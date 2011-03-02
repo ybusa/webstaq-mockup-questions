@@ -1,0 +1,11 @@
+!!! 
+%html{html_attrs}
+  %head
+    %title=@title ? "#{@title} | Questions Mockup" : "Questions Mockup"
+    = stylesheet_link_tag :all
+    = csrf_meta_tag
+  %body
+    %h1=@title if @title
+    = yield
+    =javascript_include_tag 'jquery/jquery-1.5.1.min'
+    =javascript_include_tag :all, :cache => true
