@@ -6,4 +6,22 @@
     = f.input :type, :as => :radio, :collection => Question.type_select_options
     = f.input :allow_na, :as => :select, :label => "Allow N/As?", :collection => {"No" => false, "Yes" => true}, :include_blank => false, :hint => "Allows the user to sepecify N/A as a valid answer, regardless of data type"
     = f.input :display_order
+  = f.inputs :for => :question_options, :name => "Display Options" do |builder|
+    = builder.input :display_value
+    = builder.input :data_value
+    = builder.input :_destroy, :as => :hidden
+    %li
+      %a.removeQuestionOptions remove
+    %hr
+  %li
+    %a.addQuestionOption Add Question Option
+  %fieldset#newQuestionOptions.inputs{:style => 'display:none;'}
+    %ol
+      = f.semantic_fields_for :question_options, @question.question_options.build, :child_index => 'new_question_option' do |builder|
+        = builder.input :display_value
+        = builder.input :data_value
+        = builder.input :_destroy, :as => :hidden
+        %li
+          %a.removeQuestionOptions remove
+        %hr
   = f.buttons

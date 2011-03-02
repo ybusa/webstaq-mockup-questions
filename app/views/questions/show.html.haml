@@ -17,3 +17,16 @@
   %dd= @question.data_type
   %dt Allow N/As
   %dd= @question.allow_na ? "Yes" : "No"
+
+-if @question.question_options.any?
+  %h2 Question Options
+  %table
+    %thead
+      %tr
+        %th Display Value
+        %th Data Value
+    %tbody
+      - @question.question_options.each do |option|
+        %tr
+          %td= option.display_value
+          %td= option.data_value

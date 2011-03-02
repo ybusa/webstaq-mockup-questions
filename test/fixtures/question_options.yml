@@ -1,0 +1,24 @@
+# == Schema Information
+# Schema version: 20110302211412
+#
+# Table name: question_options
+#
+#  id            :integer         not null, primary key
+#  question_id   :integer
+#  display_value :string(255)
+#  data_value    :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  question_id: 1
+  display_value: MyString
+  dat_value: MyString
+
+two:
+  question_id: 1
+  display_value: MyString
+  dat_value: MyString
