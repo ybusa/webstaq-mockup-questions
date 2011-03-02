@@ -3,6 +3,8 @@
   %head
     %title=@title ? "#{@title} | Questions Mockup" : "Questions Mockup"
     = stylesheet_link_tag :all
+    = stylesheet_link_tag 'blueprint/screen', :media => 'screen'
+    = stylesheet_link_tag 'blueprint/print', :media => 'print'
     = csrf_meta_tag
   %body
     %h1=@title if @title
