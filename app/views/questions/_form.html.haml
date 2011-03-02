@@ -4,5 +4,6 @@
     = f.input :interrogative
     = f.input :data_type, :as => :radio, :collection => Question.valid_data_types
     = f.input :type, :as => :radio, :collection => Question.type_select_options
+    = f.input :allow_na, :as => :select, :label => "Allow N/As?", :collection => {"No" => false, "Yes" => true}, :include_blank => false, :hint => "Allows the user to sepecify N/A as a valid answer, regardless of data type"
     = f.input :display_order
   = f.buttons

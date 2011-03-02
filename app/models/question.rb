@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110302190124
+# Schema version: 20110302204155
 #
 # Table name: questions
 #
@@ -11,11 +11,12 @@
 #  display_order :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  allow_na      :boolean
 #
 
 class Question < ActiveRecord::Base
 
-  attr_accessible :name, :interrogative, :data_type, :type, :display_order
+  attr_accessible :name, :interrogative, :data_type, :type, :display_order, :allow_na
 
   def self.available_sub_classes
     [RadioQuestion, SelectQuestion, InputQuestion]
@@ -38,6 +39,7 @@ class Question < ActiveRecord::Base
   validates :data_type, :presence => true, :inclusion => self.valid_data_types
   validates :type, :presence => true
   validates :display_order, :presence => true
+  validates :allow_na, :inclusion => [true, false]
 
   def to_s
     name

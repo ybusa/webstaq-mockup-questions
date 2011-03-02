@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110302190124) do
+ActiveRecord::Schema.define(:version => 20110302204155) do
 
   create_table "questions", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20110302190124) do
     t.integer  "display_order"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "allow_na"
   end
 
 end

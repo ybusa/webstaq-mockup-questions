@@ -15,3 +15,5 @@
   %dd= @question.display_order
   %dt= Question.human_attribute_name :data_type
   %dd= @question.data_type
+  %dt Allow N/As
+  %dd= @question.allow_na ? "Yes" : "No"
