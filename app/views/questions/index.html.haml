@@ -1,0 +1,23 @@
+%p= link_to "New Question", new_question_path
+
+%table
+  %thead
+    %tr
+      %th= Question.human_attribute_name :name
+      %th= Question.human_attribute_name :interrogative
+      %th= Question.human_attribute_name :data_type
+      %th= Question.human_attribute_name :type
+      %th= Question.human_attribute_name :display_order
+      %th{:colspan => 3} actions
+  
+  %tbody
+    - for question in @questions
+      %tr{ :class => cycle(:odd, :even) }
+        %td= question.name
+        %td= question.interrogative
+        %td= question.data_type
+        %td= question.class.type_name
+        %td= question.display_order
+        %td.action= link_to 'show', question
+        %td.action= link_to 'edit', edit_question_path(question)
+        %td.action= link_to 'destroy', question, :confirm => 'are_you_sure', :method => :delete

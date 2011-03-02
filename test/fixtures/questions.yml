@@ -1,0 +1,32 @@
+# == Schema Information
+# Schema version: 20110302190124
+#
+# Table name: questions
+#
+#  id            :integer         not null, primary key
+#  name          :string(255)
+#  interrogative :string(255)
+#  data_type     :string(255)
+#  type          :string(255)
+#  display_order :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  interrogative: MyString
+  data_type: MyString
+  type: MyString
+  display_order: 1
+  data_type: MyString
+
+two:
+  name: MyString
+  interrogative: MyString
+  data_type: MyString
+  type: MyString
+  display_order: 1
+  data_type: MyString

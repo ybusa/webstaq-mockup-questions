@@ -1,0 +1,8 @@
+= semantic_form_for(@question) do |f|
+  = f.inputs do
+    = f.input :name
+    = f.input :interrogative
+    = f.input :data_type, :as => :radio, :collection => Question.valid_data_types
+    = f.input :type, :as => :radio, :collection => Question.type_select_options
+    = f.input :display_order
+  = f.buttons

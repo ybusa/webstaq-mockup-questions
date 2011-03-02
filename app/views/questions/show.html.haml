@@ -1,0 +1,17 @@
+%p
+  = link_to 'back', questions_path
+  = link_to 'edit', edit_question_path(@question)
+
+%dl
+  %dt= Question.human_attribute_name :name
+  %dd= @question.name
+  %dt= Question.human_attribute_name :interrogative
+  %dd= @question.interrogative
+  %dt= Question.human_attribute_name :data_type
+  %dd= @question.data_type
+  %dt= Question.human_attribute_name :type
+  %dd= @question.type
+  %dt= Question.human_attribute_name :display_order
+  %dd= @question.display_order
+  %dt= Question.human_attribute_name :data_type
+  %dd= @question.data_type
