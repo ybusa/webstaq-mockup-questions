@@ -17,6 +17,15 @@
 class SelectQuestion < Question
 
 
+  def select_options
+    if data_type == "boolean"
+     options = [["Yes",false],["No",false]]
+     options += [["N/A", "N/A"]] if allow_na?
+     options
+    else
+      super
+    end
+  end
 
   protected
   
