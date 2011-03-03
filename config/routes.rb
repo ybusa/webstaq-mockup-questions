@@ -1,5 +1,7 @@
 WebstaqMockupQuestions::Application.routes.draw do
 
+  resources :report_steps
+
   resources :steps
 
   resources :entities
@@ -11,6 +13,8 @@ WebstaqMockupQuestions::Application.routes.draw do
   resources :check_questions, :controller => :questions
 
   get "pages/home"
+
+  root :to => "report_steps#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

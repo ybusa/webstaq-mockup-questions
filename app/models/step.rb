@@ -17,6 +17,8 @@ class Step < ActiveRecord::Base
   has_many :step_questions
   has_many :questions, :through => :step_questions
 
+  has_many :report_steps
+
   def to_s
     name
   end
