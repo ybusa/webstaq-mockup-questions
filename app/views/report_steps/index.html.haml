@@ -2,6 +2,6 @@
   %tbody
     - for report_step in @report_steps
       %tr{ :class => cycle(:odd, :even) }
-        %td= link_to_unless report_step.submitted?, report_step.step, report_step
+        %td= link_to_unless report_step.submitted?, report_step.step, edit_report_step_path(report_step)
         %td= report_step.submitted ? link_to("view", report_step) : "not submitted"
         %td= link_to("unsubmit", report_step) if report_step.submitted?

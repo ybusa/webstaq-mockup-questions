@@ -30,6 +30,17 @@ class ReportStepsController < ApplicationController
   # GET /report_steps/1/edit
   def edit
     @report_step = ReportStep.find(params[:id])
+    @report_step.initialize_report_step
+
+    @entities = @report_step.entities.order('last_name ASC, first_name ASC')
+    @entity = Entity.find(params[:entity_id]) if params[:entity_id]
+    @entity ||= @entities.first
+    @next_entity = @entities.where('last_name > ? OR (last_name = ? and first_name > ?)', @entity.last_name, @entity.last_name, @entity.first_name).order('last_name ASC, first_name ASC').first
+    @prev_entity = @entities.where('last_name < ? OR (last_name = ? and first_name < ?)', @entity.last_name, @entity.last_name, @entity.first_name).order('last_name DESC, first_name DESC').first
+
+    @title = @report_step.step
+
+    render :edit, :layout => 'sidebar'
   end
 
   # PUT /report_steps/1

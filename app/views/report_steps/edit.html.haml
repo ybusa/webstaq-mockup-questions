@@ -1,4 +1,16 @@
 %p
   = link_to 'back', report_steps_path
-  = link_to 'show', @report_step
-= render 'form'
+
+%h3 Questions For #{@entity}
+%p
+  = link_to 'previous', edit_report_step_path(@report_step, :entity_id => @prev_entity.id) unless @prev_entity.nil?
+  = link_to 'next', edit_report_step_path(@report_step, :entity_id => @next_entity.id) unless @next_entity.nil?
+
+%table
+  =render @report_step.step.questions
+
+- content_for :sidebar do
+  %h4 Entities with Questions:
+  %ul
+    - @entities.each do |entity|
+      %li= link_to entity, edit_report_step_path(@report_step, :entity_id => entity.id)
