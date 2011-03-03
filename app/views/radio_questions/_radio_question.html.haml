@@ -1,7 +1,9 @@
-%span= radio_question.interrogative
-%span
-  %ul
-    - radio_question.select_options.each do |option|
-      %li
-        = radio_button_tag radio_question.name, option[1]
-        = option[0]
+%tr
+  %td{:colspan => 2}= radio_question.interrogative
+%tr
+  %td{:colspan => 2, :style => 'text-align:right'}
+    %ul
+      - radio_question.select_options.each do |option|
+        %li
+          = radio_button_tag radio_question.name, option[1]
+          = option[0]

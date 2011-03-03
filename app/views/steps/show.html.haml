@@ -7,5 +7,6 @@
   %dd= @step.name
 
 %h3 Preview
-- @step.questions.order('display_order ASC').each do |question|
-  .question-wrapper= render question
+%table
+  - @step.questions.order('display_order ASC').each do |question|
+    = render question
