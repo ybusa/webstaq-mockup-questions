@@ -1,5 +1,7 @@
 WebstaqMockupQuestions::Application.routes.draw do
 
+  resources :steps
+
   resources :entities
 
   resources :questions 

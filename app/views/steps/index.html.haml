@@ -1,0 +1,15 @@
+%p= link_to "New Step", new_step_path
+
+%table
+  %thead
+    %tr
+      %th= Step.human_attribute_name :name
+      %th{:colspan => 3} actions
+  
+  %tbody
+    - for step in @steps
+      %tr{ :class => cycle(:odd, :even) }
+        %td= step.name
+        %td.action= link_to 'show', step
+        %td.action= link_to 'edit', edit_step_path(step)
+        %td.action= link_to 'destroy', step, :confirm => 'are_you_sure', :method => :delete

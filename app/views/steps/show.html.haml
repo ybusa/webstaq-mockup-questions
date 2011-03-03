@@ -1,0 +1,11 @@
+%p
+  = link_to 'back', steps_path
+  = link_to 'edit', edit_step_path(@step)
+
+%dl
+  %dt= Step.human_attribute_name :name
+  %dd= @step.name
+
+%h3 Preview
+- @step.questions.order('display_order ASC').each do |question|
+  .question-wrapper= render question

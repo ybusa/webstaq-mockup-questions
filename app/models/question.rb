@@ -19,6 +19,8 @@ class Question < ActiveRecord::Base
   attr_accessible :name, :interrogative, :data_type, :type, :display_order, :allow_na, :question_options_attributes
 
   has_many :question_options, :dependent => :destroy
+  has_many :step_questions
+  has_many :steps, :through => :step_questions
 
   accepts_nested_attributes_for :question_options, :reject_if => lambda { |a| a[:display_value].blank? }, :allow_destroy => true
 

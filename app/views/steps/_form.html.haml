@@ -1,0 +1,5 @@
+= semantic_form_for @step do |form|
+  = form.inputs do 
+    = form.input :name
+    = form.input :questions, :as => :check_boxes
+  = form.buttons
