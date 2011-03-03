@@ -1,0 +1,9 @@
+%p
+  = link_to 'back', entities_path
+  = link_to 'edit', edit_entity_path(@entity)
+
+%dl
+  %dt= Entity.human_attribute_name :first_name
+  %dd= @entity.first_name
+  %dt= Entity.human_attribute_name :last_name
+  %dd= @entity.last_name

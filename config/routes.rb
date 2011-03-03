@@ -1,5 +1,7 @@
 WebstaqMockupQuestions::Application.routes.draw do
 
+  resources :entities
+
   resources :questions 
   resources :select_questions, :controller => :questions
   resources :input_questions, :controller => :questions
