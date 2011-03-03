@@ -7,7 +7,14 @@
     = stylesheet_link_tag 'blueprint/print', :media => 'print'
     = csrf_meta_tag
   %body
-    %h1=@title if @title
-    = yield
-    =javascript_include_tag 'jquery/jquery-1.5.1.min'
-    =javascript_include_tag :all, :cache => true
+    .container
+      #header.span-24.last
+        %h1.span-16 WebSTA-Q Question Mockup
+        .span-8.last
+          = link_to "Questions", questions_path
+          = link_to "Entities", entities_path
+      #content.span-24
+        %h2=@title if @title
+        = yield
+        =javascript_include_tag 'jquery/jquery-1.5.1.min'
+        =javascript_include_tag :all, :cache => true
