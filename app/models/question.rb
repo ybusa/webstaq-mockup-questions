@@ -49,6 +49,12 @@ class Question < ActiveRecord::Base
     name
   end
 
+  def select_options
+    options = question_options.map { |opt| [opt.display_value, opt.data_value] }
+    options += [["N/A", "N/A"]] if allow_na
+    options
+  end
+
   # Override each child class's model_name method so that all question
   # subclasses use the paths for Question.
   def self.inherited(child)

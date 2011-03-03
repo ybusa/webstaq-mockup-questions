@@ -30,3 +30,6 @@
         %tr
           %td= option.display_value
           %td= option.data_value
+
+%h2 Preview
+=render :partial => 'select_question', :locals => { :select_question => @question }
