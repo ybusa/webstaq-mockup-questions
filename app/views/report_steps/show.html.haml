@@ -1,0 +1,9 @@
+%p
+  = link_to 'back', report_steps_path
+  = link_to 'edit', edit_report_step_path(@report_step)
+
+%dl
+  %dt= ReportStep.human_attribute_name :step_id
+  %dd= @report_step.step_id
+  %dt= ReportStep.human_attribute_name :submitted
+  %dd= @report_step.submitted

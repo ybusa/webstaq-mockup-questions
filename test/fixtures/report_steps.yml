@@ -1,0 +1,22 @@
+# == Schema Information
+# Schema version: 20110303201144
+#
+# Table name: report_steps
+#
+#  id          :integer         not null, primary key
+#  step_id     :integer
+#  submitted   :boolean
+#  created_at  :datetime
+#  updated_at  :datetime
+#  initialized :boolean
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  step_id: 1
+  submitted: false
+
+two:
+  step_id: 1
+  submitted: false

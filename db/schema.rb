@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110303191902) do
+ActiveRecord::Schema.define(:version => 20110303202559) do
 
   create_table "entities", :force => true do |t|
     t.string   "first_name"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(:version => 20110303191902) do
   create_table "report_steps", :force => true do |t|
     t.integer  "step_id"
     t.boolean  "submitted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "initialized"
+  end
+
+  create_table "step_entities", :force => true do |t|
+    t.integer  "entity_id"
+    t.integer  "report_step_id"
+    t.boolean  "submitted",      :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

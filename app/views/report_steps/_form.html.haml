@@ -1,0 +1,19 @@
+= form_for(@report_step) do |f|
+  - if @report_step.errors.any?
+    #errorExplanation
+      %h2= "#{pluralize(@report_step.errors.count, 'error')} prohibited this user from being saved:"
+      %ul
+      - @report_step.errors.full_messages.each do |msg|
+        %li= msg
+  
+  .field
+    = f.label :step_id
+    %br
+    = f.text_field :step_id
+  .field
+    = f.label :submitted
+    %br
+    = f.check_box :submitted
+
+  .actions
+    = f.submit

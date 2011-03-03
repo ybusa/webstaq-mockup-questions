@@ -16,6 +16,9 @@ class Entity < ActiveRecord::Base
   validates :first_name, :presence => true
   validates :last_name, :presence => true
 
+  has_many :entity_steps
+  has_many :report_steps, :through => :entity_steps
+
   def full_name
     "#{first_name} #{last_name}"
   end
