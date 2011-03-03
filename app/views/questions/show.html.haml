@@ -10,7 +10,7 @@
   %dt= Question.human_attribute_name :data_type
   %dd= @question.data_type
   %dt= Question.human_attribute_name :type
-  %dd= @question.type
+  %dd= @question.class.type_name
   %dt= Question.human_attribute_name :display_order
   %dd= @question.display_order
   %dt= Question.human_attribute_name :data_type
@@ -32,4 +32,4 @@
           %td= option.data_value
 
 %h2 Preview
-=render :partial => 'select_question', :locals => { :select_question => @question }
+=render @question

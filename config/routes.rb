@@ -1,8 +1,10 @@
 WebstaqMockupQuestions::Application.routes.draw do
 
-  resources :questions do
-    resources :question_options
-  end
+  resources :questions 
+  resources :select_questions, :controller => :questions
+  resources :input_questions, :controller => :questions
+  resources :radio_questions, :controller => :questions
+  resources :check_questions, :controller => :questions
 
   get "pages/home"
 

@@ -23,11 +23,11 @@ class Question < ActiveRecord::Base
   accepts_nested_attributes_for :question_options, :reject_if => lambda { |a| a[:display_value].blank? }, :allow_destroy => true
 
   def self.available_sub_classes
-    [RadioQuestion, SelectQuestion, InputQuestion]
+    [RadioQuestion, SelectQuestion, InputQuestion, CheckQuestion]
   end
 
   def self.valid_data_types
-    ['int', 'string', 'decimal', 'date']
+    ['int', 'string', 'decimal', 'date','boolean']
   end
 
   def self.valid_types
@@ -57,19 +57,19 @@ class Question < ActiveRecord::Base
 
   # Override each child class's model_name method so that all question
   # subclasses use the paths for Question.
-  def self.inherited(child)
-    child.instance_eval do
-      def model_name
-        Question.model_name
-      end
-    end
-    super
-  end
+  #def self.inherited(child)
+  #  child.instance_eval do
+  #    def model_name
+  #      Question.model_name
+  #    end
+  #  end
+  #  super
+  #end
 
   protected
 
   def self.type_name
-    self.name.humanize
+    self.name
   end
 
 end

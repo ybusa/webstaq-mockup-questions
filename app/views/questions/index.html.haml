@@ -20,6 +20,6 @@
         %td= question.class.type_name
         %td= question.display_order
         %td= question.allow_na ? "Yes" : "No"
-        %td.action= link_to 'show', question
+        %td.action= link_to 'show', question_path(question)
         %td.action= link_to 'edit', edit_question_path(question)
         %td.action= link_to 'destroy', question, :confirm => 'are_you_sure', :method => :delete

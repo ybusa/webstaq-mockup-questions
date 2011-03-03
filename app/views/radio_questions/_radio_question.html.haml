@@ -1,0 +1,7 @@
+%span= radio_question.interrogative
+%span
+  %ul
+    - radio_question.select_options.each do |option|
+      %li
+        = radio_button_tag radio_question.name, option[1]
+        = option[0]
