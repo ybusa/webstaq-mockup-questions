@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110303202559) do
+ActiveRecord::Schema.define(:version => 20110304164206) do
+
+  create_table "answers", :force => true do |t|
+    t.integer  "entity_id"
+    t.integer  "question_id"
+    t.boolean  "not_applicable"
+    t.string   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "entities", :force => true do |t|
     t.string   "first_name"

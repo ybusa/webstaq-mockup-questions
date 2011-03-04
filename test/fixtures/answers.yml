@@ -1,0 +1,27 @@
+# == Schema Information
+# Schema version: 20110304164206
+#
+# Table name: answers
+#
+#  id             :integer         not null, primary key
+#  entity_id      :integer
+#  question_id    :integer
+#  not_applicable :boolean
+#  data           :string(255)
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  entity_id: 1
+  question_id: 1
+  not_applicable: false
+  data: MyString
+
+two:
+  entity_id: 1
+  question_id: 1
+  not_applicable: false
+  data: MyString
