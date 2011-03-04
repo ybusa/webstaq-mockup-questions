@@ -1,3 +1,1 @@
-%tr
-  %td= input_question.interrogative
-  %td= text_field_tag input_question.name
+= form.input :data,  :label => input_question.interrogative, :input_html => {:value => data}

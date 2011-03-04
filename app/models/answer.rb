@@ -21,8 +21,7 @@ class Answer < ActiveRecord::Base
   validates :entity_id, :presence => true
   validates :question_id, :presence => true
   validates :not_applicable, :inclusion => [true, false]
-  validate data_validation
-
+  validate :data_validation
 
   private
 

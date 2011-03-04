@@ -21,6 +21,7 @@ class Question < ActiveRecord::Base
   has_many :question_options, :dependent => :destroy
   has_many :step_questions
   has_many :steps, :through => :step_questions
+  has_many :answers
 
   accepts_nested_attributes_for :question_options, :reject_if => lambda { |a| a[:display_value].blank? }, :allow_destroy => true
 

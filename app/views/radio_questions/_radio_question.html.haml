@@ -1,9 +1,1 @@
-%tr
-  %td{:colspan => 2}= radio_question.interrogative
-%tr
-  %td{:colspan => 2, :style => 'text-align:right'}
-    %ul
-      - radio_question.select_options.each do |option|
-        %li
-          = radio_button_tag radio_question.name, option[1]
-          = option[0]
+= form.input :data, :as => :radio, :collection => radio_question.select_options, :label => radio_question.interrogative

@@ -40,6 +40,7 @@ class ReportStepsController < ApplicationController
 
     @title = @report_step.step
     @questions = @report_step.step.questions.order('display_order ASC')
+    @answers = @questions.map { |question| @entity.answers.find_or_initialize_by_question_id(question.id) }
 
     render :edit, :layout => 'sidebar'
   end

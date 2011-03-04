@@ -2,12 +2,13 @@
   = link_to 'back', report_steps_path
 
 %h3 Questions For #{@entity}
-%p
-  = link_to 'previous', edit_report_step_path(@report_step, :entity_id => @prev_entity.id) unless @prev_entity.nil?
-  = link_to 'next', edit_report_step_path(@report_step, :entity_id => @next_entity.id) unless @next_entity.nil?
+= render :partial => 'navigation'
 
-%table
-  =render @questions
+= semantic_form_for @entity, :url => report_step_path(@report_step) do |form|
+  = render @answers, :form => form 
+  = form.buttons
+
+= render :partial => 'navigation'
 
 - content_for :sidebar do
   %h4 Entities with Questions:

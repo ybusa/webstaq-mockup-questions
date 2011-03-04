@@ -1,4 +1,1 @@
-%tr
-  %td= select_question.interrogative
-  %td= select "question", "name", select_question.select_options
-    
+= form.input :data, :as => :select, :collection => select_question.select_options, :input_html => { :data => data}, :label => select_question.interrogative 

@@ -18,6 +18,9 @@ class Entity < ActiveRecord::Base
 
   has_many :entity_steps
   has_many :report_steps, :through => :step_entities
+  has_many :answers
+
+  accepts_nested_attributes_for :answers
 
   def full_name
     "#{first_name} #{last_name}"

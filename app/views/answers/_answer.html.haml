@@ -1,1 +1,4 @@
-= render answer.question
+= form.semantic_fields_for :answers, answer, :child_index =>  answer.question.id do |answer_form|
+  = answer_form.inputs do
+    = render answer.question, :form => answer_form, :data => answer.data 
+
