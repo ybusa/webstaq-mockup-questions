@@ -7,6 +7,7 @@
   %dd= @step.name
 
 %h3 Preview
-%table
-  - @step.questions.order('display_order ASC').each do |question|
-    = render question
+#questions
+  = semantic_form_for Entity.new do |form|
+    - (@step.questions.order('display_order ASC').map { |q| q.answers.build }).each do |answer|
+      = render answer, :form => form

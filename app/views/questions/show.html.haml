@@ -32,5 +32,6 @@
           %td= option.data_value
 
 %h2 Preview
-%table
-  = render @question
+#questions
+  = semantic_form_for Entity.new do |form|
+    = render @question.answers.build, :form => form
