@@ -14,5 +14,10 @@ $(function () {
 
       e.preventDefault();
       });
+
+    $("a.goToEntity").click(function (e) {
+      e.preventDefault();
+      $("#next_entity").val($(this).attr("entity_id")).closest("form").submit();
+      });
     });
 

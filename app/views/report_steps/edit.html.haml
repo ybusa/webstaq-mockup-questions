@@ -8,6 +8,7 @@
   = semantic_form_for @entity, :url => report_step_path(@report_step) do |form|
     = form.inputs do 
       = form.input :id, :as => :hidden
+      = hidden_field_tag 'next_entity'
     = render @answers, :form => form 
     = form.buttons
 
@@ -17,4 +18,4 @@
   %h4 Entities with Questions:
   %ul
     - @entities.each do |entity|
-      %li= link_to entity, edit_report_step_path(@report_step, :entity_id => entity.id)
+      %li= link_to entity, edit_report_step_path(@report_step, :entity_id => entity.id), :class => "goToEntity", :entity_id => entity.id

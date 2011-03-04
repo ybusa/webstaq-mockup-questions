@@ -58,15 +58,8 @@ class ReportStepsController < ApplicationController
       answer.save
     end
 
-    respond_to do |format|
-      if @report_step.update_attributes(params[:report_step])
-        format.html { redirect_to(@report_step, :notice => 'Report step was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @report_step.errors, :status => :unprocessable_entity }
-      end
-    end
+    redirect_to edit_report_step_path(@report_step, :entity_id => params[:next_entity])
+
   end
 
   # DELETE /report_steps/1

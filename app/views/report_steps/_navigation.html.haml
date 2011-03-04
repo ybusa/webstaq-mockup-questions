@@ -1,3 +1,3 @@
 %p
-  = link_to 'previous', edit_report_step_path(@report_step, :entity_id => @prev_entity.id) unless @prev_entity.nil?
-  = link_to 'next', edit_report_step_path(@report_step, :entity_id => @next_entity.id) unless @next_entity.nil?
+  = link_to 'previous', edit_report_step_path(@report_step, :entity_id => @prev_entity.id), :class => "goToEntity", :entity_id => @prev_entity.id unless @prev_entity.nil?
+  = link_to 'next', edit_report_step_path(@report_step, :entity_id => @next_entity.id), :class => "goToEntity", :entity_id => @next_entity.id unless @next_entity.nil?
