@@ -49,6 +49,14 @@ class ReportStepsController < ApplicationController
   # PUT /report_steps/1.xml
   def update
     @report_step = ReportStep.find(params[:id])
+    @entity = Entity.find(params[:entity][:id])
+
+    params[:entity][:answers_attributes].each do |question_id, fields|
+      answer = @entity.answers.find_or_create_by_question_id(question_id)
+      answer.data = fields[:data]
+      answer.not_applicable = false
+      answer.save
+    end
 
     respond_to do |format|
       if @report_step.update_attributes(params[:report_step])
