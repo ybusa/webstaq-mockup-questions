@@ -7,7 +7,7 @@
   = link_to 'next', edit_report_step_path(@report_step, :entity_id => @next_entity.id) unless @next_entity.nil?
 
 %table
-  =render @report_step.step.questions
+  =render @questions
 
 - content_for :sidebar do
   %h4 Entities with Questions:

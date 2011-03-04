@@ -39,6 +39,7 @@ class ReportStepsController < ApplicationController
     @prev_entity = @entities.where('last_name < ? OR (last_name = ? and first_name < ?)', @entity.last_name, @entity.last_name, @entity.first_name).order('last_name DESC, first_name DESC').first
 
     @title = @report_step.step
+    @questions = @report_step.step.questions.order('display_order ASC')
 
     render :edit, :layout => 'sidebar'
   end
