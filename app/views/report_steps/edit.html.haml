@@ -4,11 +4,12 @@
 %h3 Questions For #{@entity}
 = render :partial => 'navigation'
 
-= semantic_form_for @entity, :url => report_step_path(@report_step) do |form|
-  = form.inputs do 
-    = form.input :id, :as => :hidden
-  = render @answers, :form => form 
-  = form.buttons
+#questions
+  = semantic_form_for @entity, :url => report_step_path(@report_step) do |form|
+    = form.inputs do 
+      = form.input :id, :as => :hidden
+    = render @answers, :form => form 
+    = form.buttons
 
 = render :partial => 'navigation'
 

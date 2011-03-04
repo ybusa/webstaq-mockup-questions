@@ -13,20 +13,20 @@ form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 
 --------------------------------------------------------------------------------------------------*/
 
-form.formtastic fieldset ol > li.radio fieldset ol { width: 29%; padding-left: 70%; }
-form.formtastic fieldset ol > li label { width: 70%; }
-form.formtastic fieldset > ol > li.string input, 
-form.formtastic fieldset > ol > li.password input, 
-form.formtastic fieldset > ol > li.numeric input,
-form.formtastic fieldset > ol > li.email input,
-form.formtastic fieldset > ol > li.url input,
-form.formtastic fieldset > ol > li.phone input,
-form.formtastic fieldset > ol > li.search input { width:27%; }
+#questions form.formtastic fieldset ol > li.radio fieldset ol { width: 29%; padding-left: 70%; }
+#questions form.formtastic fieldset ol > li  label { width: 70%; }
+#questions form.formtastic fieldset > ol > li.string input, 
+#questions form.formtastic fieldset > ol > li.password input, 
+#questions form.formtastic fieldset > ol > li.numeric input,
+#questions form.formtastic fieldset > ol > li.email input,
+#questions form.formtastic fieldset > ol > li.url input,
+#questions form.formtastic fieldset > ol > li.phone input,
+#questions form.formtastic fieldset > ol > li.search input { width:27%; }
 
-form.formtastic fieldset > ol > li.string input[size], 
-form.formtastic fieldset > ol > li.password input[size], 
-form.formtastic fieldset > ol > li.numeric input[size],
-form.formtastic fieldset > ol > li.email input[size],
-form.formtastic fieldset > ol > li.url input[size],
-form.formtastic fieldset > ol > li.phone input[size],
-form.formtastic fieldset > ol > li.search input[size] { width:auto; max-width:27%; }
+#questions form.formtastic fieldset > ol > li.string input[size], 
+#questions form.formtastic fieldset > ol > li.password input[size], 
+#questions form.formtastic fieldset > ol > li.numeric input[size],
+#questions form.formtastic fieldset > ol > li.email input[size],
+#questions form.formtastic fieldset > ol > li.url input[size],
+#questions form.formtastic fieldset > ol > li.phone input[size],
+#questions form.formtastic fieldset > ol > li.search input[size] { width:auto; max-width:27%; }
